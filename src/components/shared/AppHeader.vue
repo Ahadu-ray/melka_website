@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-black absolute top-0 left-0 w-full z-10 py-4">
+  <header class="bg-white absolute top-0 left-0 w-full z-10 py-1 shadow-lg">
     <nav class="container mx-auto px-4 flex justify-between items-center">
       <div class="flex items-center space-x-2">
         <img src="../../assets/logo.png" alt="JaRcoo Logo" class="w-20 h-20" />

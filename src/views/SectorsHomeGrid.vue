@@ -1,14 +1,14 @@
 <script lang="ts">
-import ServicesHomeGridItem from './single_items/ServicesHomeGridItem.vue'
-import services from '../data/services'
+import SectorHomeGridItem from './single_items/SectorHomeGridItem.vue'
+import sectors from '../data/sectors'
 
 export default {
-  components: { ServicesHomeGridItem },
+  components: { SectorHomeGridItem },
 
   data: () => {
     return {
-      // Get first 3 services for homepage display
-      services: services.slice(0, 3),
+      // Get first 3 sectors for homepage display
+      sectors: sectors,
     }
   },
 }
@@ -16,15 +16,15 @@ export default {
 
 <template>
   <!-- Only show title when not on homepage -->
-  <div v-if="!$route.path.includes('home')" class="text-center mb-12">
+  <div v-if="!$route.path.includes('home')" class="text-center mb-12 mt-12">
     <h2 class="font-general-semibold text-3xl font-bold text-custom-dark dark:text-white mb-4">
-      Services
+      Sector
     </h2>
   </div>
 
-  <!-- Services Grid -->
+  <!-- sectors Grid -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-7xl px-4">
-    <ServicesHomeGridItem v-for="service in services" :key="service.id" :service="service" />
+    <SectorHomeGridItem v-for="sector in sectors" :key="sector.id" :sector="sector" />
   </div>
 </template>
 

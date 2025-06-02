@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-  props: ['service'],
+  props: ['client'],
   computed: {
     // Get first 3 items for preview
   },
@@ -9,10 +9,9 @@ export default {
 
 <template>
   <div
-    class="bg-white dark:bg-custom-dark rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
-    aria-label="Service category"
+    class="overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
   >
-    <!-- Service Header with Icon -->
+    <!-- clent Header with Icon -->
     <div
       class="h-32 bg-gradient-to-r from-custom-dark to-custom-dark-light flex items-center justify-center relative overflow-hidden"
     >
@@ -20,16 +19,17 @@ export default {
       <div class="absolute top-0 left-0 w-24 h-24 rounded-full bg-gold/10 -ml-12 -mt-12"></div>
       <div class="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-gold/10 -mr-16 -mb-16"></div>
 
-      <!-- Service Icon -->
-      <div class="relative z-10">
-        <h3 class="font-bold text-xl text-center">{{ service.title }}</h3>
+      <!-- clent Icon -->
+      <div class="relative z-10 flex flex-col items-center">
+        <img class="h-16" :src="client.img" alt="" />
+        <h3 class="text-sm text-center">{{ client.title }}</h3>
       </div>
     </div>
 
-    <!-- Service Content -->
+    <!-- clent Content -->
     <!-- <div class="p-6">
       <router-link
-        :to="`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`"
+        :to="`/clents#${clent.title.toLowerCase().replace(/\s+/g, '-')}`"
         class="inline-flex items-center font-medium hover:/80 transition-colors"
       >
         View details
