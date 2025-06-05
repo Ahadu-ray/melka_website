@@ -9,11 +9,11 @@ const routes = [
     component: HomePage,
   },
   // You can add more routes here as needed for other pages
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import('../components/AboutPage.vue'), // Example of lazy loading
-  // },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/AboutView.vue'), // Example of lazy loading
+  },
   // {
   //   path: '/services',
   //   name: 'Services',
