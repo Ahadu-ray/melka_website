@@ -6,118 +6,67 @@
       </div>
 
       <div class="hidden md:flex space-x-8">
-        <router-link
-          to="/"
-          class="text-white hover:text-gray-300 transition-colors duration-300 font-inter"
+        <router-link to="/" class="hover:text-gray-300 transition-colors duration-300 font-inter"
           >Home</router-link
         >
         <router-link
           to="/about"
-          class="text-white hover:text-gray-300 transition-colors duration-300 font-inter"
+          class="hover:text-gray-300 transition-colors duration-300 font-inter"
           >About</router-link
         >
-        <router-link
-          to="/services"
-          class="text-white hover:text-gray-300 transition-colors duration-300 font-inter"
-          >Services</router-link
-        >
-        <router-link
-          to="/publications"
-          class="text-white hover:text-gray-300 transition-colors duration-300 font-inter"
-          >Publications</router-link
-        >
-        <router-link
-          to="/work-with-us"
-          class="text-white hover:text-gray-300 transition-colors duration-300 font-inter"
-          >Work with us</router-link
-        >
-        <router-link
-          to="/contact"
-          class="text-white hover:text-gray-300 transition-colors duration-300 font-inter"
-          >Contact</router-link
-        >
-      </div>
-
-      <button @click="toggleMobileMenu" class="md:hidden text-white focus:outline-none">
-        <svg
-          class="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-4 6h4"
-          ></path>
-        </svg>
-      </button>
-    </nav>
-
-    <transition name="slide-fade">
-      <div
-        v-if="isMobileMenuOpen"
-        class="md:hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-6 z-20"
-      >
-        <button
-          @click="toggleMobileMenu"
-          class="absolute top-4 right-4 text-white focus:outline-none"
-        >
-          <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        <div class="" @mouseleave="showProductDropdown = false">
+          <div
+            class="green  hover:text-gray-300 transition-colors duration-300 font-inter"
+            @click="showProductDropdown = !showProductDropdown"
+            aria-label="Services"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
+            Services
+          </div>
+
+          <div
+            v-if="showProductDropdown"
+            class="bg-white flex flex-col items-start sm:absolute w-72 bg-app-blue shadow-md rounded-md pr-5 pl-2 z-50"
+          >
+            <router-link
+              to="/services/data"
+              class="font-general-medium text-left block hover:text-gold dark:hover:text-gold py-1"
+              @click="showProductDropdown = false"
+            >
+              Data Collection
+            </router-link>
+            <router-link
+              to="/services/mel"
+              class="font-general-medium text-left block hover:text-gold dark:hover:text-gold py-1"
+              @click="showProductDropdown = false"
+            >
+              Monitoring and Evaluation
+            </router-link>
+            <router-link
+              to="/services/tech"
+              class="font-general-medium block hover:text-gold dark:hover:text-gold py-1"
+              @click="showProductDropdown = false"
+            >
+              Tech Support
+            </router-link>
+          </div>
+        </div>
         <router-link
-          @click="toggleMobileMenu"
-          to="/"
-          class="text-white text-3xl font-inter hover:text-gray-300 transition-colors duration-300"
-          >Home</router-link
-        >
-        <router-link
-          @click="toggleMobileMenu"
-          to="/about"
-          class="text-white text-3xl font-inter hover:text-gray-300 transition-colors duration-300"
-          >About</router-link
-        >
-        <router-link
-          @click="toggleMobileMenu"
-          to="/services"
-          class="text-white text-3xl font-inter hover:text-gray-300 transition-colors duration-300"
-          >Services</router-link
-        >
-        <router-link
-          @click="toggleMobileMenu"
           to="/publications"
-          class="text-white text-3xl font-inter hover:text-gray-300 transition-colors duration-300"
+          class="hover:text-gray-300 transition-colors duration-300 font-inter"
           >Publications</router-link
         >
         <router-link
-          @click="toggleMobileMenu"
           to="/work-with-us"
-          class="text-white text-3xl font-inter hover:text-gray-300 transition-colors duration-300"
+          class="hover:text-gray-300 transition-colors duration-300 font-inter"
           >Work with us</router-link
         >
         <router-link
-          @click="toggleMobileMenu"
           to="/contact"
-          class="text-white text-3xl font-inter hover:text-gray-300 transition-colors duration-300"
+          class="hover:text-gray-300 transition-colors duration-300 font-inter"
           >Contact</router-link
         >
       </div>
-    </transition>
+    </nav>
   </header>
 </template>
 
@@ -126,13 +75,8 @@ export default {
   name: 'AppHeader',
   data() {
     return {
-      isMobileMenuOpen: false,
+      showProductDropdown: false,
     }
-  },
-  methods: {
-    toggleMobileMenu() {
-      this.isMobileMenuOpen = !this.isMobileMenuOpen
-    },
   },
 }
 </script>

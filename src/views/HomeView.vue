@@ -1,5 +1,8 @@
 <template>
-  <div class="relative min-h-screen bg-cover bg-center flex items-center justify-center p-4">
+  <div class="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center p-4"
+      :style="{ backgroundImage: `url(${backgroundImage})` }"
+  
+  >
     <div
       class="relative z-10 text-center max-w-4xl mx-auto px-4 py-8 rounded-lg shadow-lg bg-white"
     >
@@ -19,6 +22,7 @@
 </template>
 
 <script lang="ts">
+import backgroundImage from '../data/assets';
 import ClientsHomeGrid from './ClientsHomeGrid.vue'
 import SectorsHomeGrid from './SectorsHomeGrid.vue'
 import ServicesHomeGrid from './ServicesHomeGrid.vue'
@@ -30,6 +34,13 @@ export default {
     SectorsHomeGrid,
     ClientsHomeGrid,
   },
+    data: () => {
+    return {
+      theme: "",
+      backgroundImage: backgroundImage,
+    };
+  },
+
 }
 </script>
 

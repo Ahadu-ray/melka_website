@@ -19,6 +19,49 @@ const routes = [
   //   name: 'Services',
   //   component: () => import('../components/ServicesPage.vue'),
   // },
+
+	
+	{
+		path: '/services/data',
+		name: 'Data Collection',
+		// route level code-splitting
+		// this generates a separate chunk (projects.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(
+				/* webpackChunkName: "projects" */ '../components/services/DataCollection.vue'
+			),
+		meta: {
+			title: 'Melka - Data Collection',
+		},
+	},{
+		path: '/services/mel',
+		name: 'MEL',
+		// route level code-splitting
+		// this generates a separate chunk (projects.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(
+				/* webpackChunkName: "projects" */ '../components/services/MonitoringAndEvaluation.vue'
+			),
+		meta: {
+			title: 'Melka - MEL',
+		},
+	},
+	{
+		path: '/services/tech',
+		name: 'Tech Support',
+		// route level code-splitting
+		// this generates a separate chunk (projects.[hash].js) for this route
+		// which is lazy-loaded when the route is visited.
+		component: () =>
+			import(
+				/* webpackChunkName: "projects" */ '../components/services/TechSupport.vue'
+			),
+		meta: {
+			title: 'Melka - Technical Support',
+		},
+	},
   // {
   //   path: '/publications',
   //   name: 'Publications',
