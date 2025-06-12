@@ -29,11 +29,11 @@ const routes = [
   //   name: 'WorkWithUs',
   //   component: () => import('../components/WorkWithUsPage.vue'),
   // },
-  // {
-  //   path: '/contact',
-  //   name: 'Contact',
-  //   component: () => import('../components/ContactPage.vue'),
-  // },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/ContacctUs.vue'),
+  },
 ]
 
 const router = createRouter({
